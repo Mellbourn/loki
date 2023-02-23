@@ -7,7 +7,7 @@
     "ios": "react-native run-ios",
     "start": "react-native start",
     "test": "jest",
-    "storybook": "(adb reverse tcp:7007 tcp:7007 > /dev/null || true) && echo 'y' | start-storybook -p 7007 | react-native start --projectRoot storybook --watchFolders $PWD | deelay",
+    "storybook": "(adb reverse tcp:7007 tcp:7007 > /dev/null || true) && echo 'y' | start-storybook -p 7007 | react-native start --projectRoot storybook --watchFolders $PWD",
     "update-loki": "LOKI_FILE=`cd ../.. && echo \\`pwd\\`/\\`npm pack\\`` && npm install $LOKI_FILE --no-save && rm $LOKI_FILE"
   },
   "dependencies": {
