@@ -43,9 +43,6 @@
     "configurations": {
       "ios.iphone13": {
         "target": "ios.simulator"
-      },
-      "android.pixel": {
-        "target": "android.emulator"
       }
     }
   }
