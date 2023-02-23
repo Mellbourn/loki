@@ -7,10 +7,13 @@
     "ios": "react-native run-ios",
     "start": "react-native start",
     "test": "jest",
-    "storybook": "(adb reverse tcp:7007 tcp:7007 > /dev/null || true) && echo 'y' | start-storybook -p 7007 | react-native start --projectRoot storybook --watchFolders $PWD",
-    "update-loki": "LOKI_FILE=`cd ../.. && echo \\`pwd\\`/\\`npm pack\\`` && npm install $LOKI_FILE --no-save && rm $LOKI_FILE"
+    "storybook": "(adb reverse tcp:7007 tcp:7007 > /dev/null || true) && echo 'y' | start-storybook -p 7007 | react-native start --projectRoot storybook --watchFolders $PWD --reset-cache",
+    "update-loki": "LOKI_FILE=`cd ../.. && echo \\`pwd\\`/\\`npm pack\\`` && npm install $LOKI_FILE --no-save && rm $LOKI_FILE",
+    "loki:test": "loki test",
+    "loki:update": "loki update"
   },
   "dependencies": {
+    "@loki/integration-react-native": "^0.31.0",
     "react": "17.0.2",
     "react-native": "0.68.2"
   },
@@ -18,10 +21,13 @@
     "@babel/core": "^7.12.9",
     "@babel/runtime": "^7.12.5",
     "@loki/create-async-callback": "*",
+    "@react-native-async-storage/async-storage": "^1.17.11",
     "@react-native-community/eslint-config": "^2.0.0",
-    "@storybook/addon-actions": "^6.1",
-    "@storybook/addon-links": "^6.1",
-    "@storybook/react-native": "^5.3.23",
+    "@storybook/addon-actions": "^6.5.16",
+    "@storybook/addon-essentials": "^6.5.16",
+    "@storybook/addon-links": "^6.5.16",
+    "@storybook/core-server": "^6.5.16",
+    "@storybook/react-native": "^6.5.0-rc.1",
     "@storybook/react-native-server": "^5.3.23",
     "babel-jest": "^26.6.3",
     "deelay": "^2.0.0",
